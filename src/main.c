@@ -3,10 +3,14 @@
 #include "config.h"
 
 void linspace(double start, double end, int steps, double *array) {
+if (steps==1){
+array[0]=start;
+}else{
     double step = (end - start) / (steps - 1);
     for (int i = 0; i < steps; i++) {
         array[i] = start + i * step;
     }
+}
 }
 
 int main() {
@@ -34,7 +38,6 @@ int main() {
     linspace(config.mu.start, config.mu.end, config.mu.steps, mus);
     linspace(config.phi.start, config.phi.end, config.phi.steps, phis);
 
-    init_cache();
 
     FILE *csv_file = fopen("output.csv", "w");
     if (!csv_file) {
@@ -65,7 +68,6 @@ int main() {
     }
 
     fclose(csv_file);
-    clear_cache();
 
     free(Ms);
     free(bs);

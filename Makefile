@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -I./include -lyaml
 OBJ = main.o config.o
-DEPS = config.h
+DEPS = ./include/config.h
 
 %.o: ./src/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)

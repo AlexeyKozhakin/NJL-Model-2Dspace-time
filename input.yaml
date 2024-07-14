@@ -2,11 +2,11 @@ parameters:
   M:
     start: 0.0
     end: 10.0
-    steps: 100
+    steps: 20
   b:
     start: 0.0
     end: 5.0
-    steps: 50
+    steps: 20
   L:
     start: 0.1
     end: 2.0
@@ -14,8 +14,8 @@ parameters:
   mu:
     start: 0.01
     end: 1.0
-    steps: 10
+    steps: 20
   phi:
-    start: 0.0
-    end: 3.14
-    steps: 30
+    start: 10.0
+    end: 0.0
+    steps: 1

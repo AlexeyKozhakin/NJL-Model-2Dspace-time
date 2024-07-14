@@ -1,0 +1,15 @@
+CC = gcc
+CFLAGS = -I./include -I/usr/include/hdf5/serial/
+LDFLAGS = -lyaml -hdf5
+
+OBJ = main.o config.o
+DEPS = config.h
+
+%.o: ./src/%.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+main: $(OBJ)
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+clean:
+	rm -f *.o main
