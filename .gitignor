@@ -1,0 +1,4 @@
+main
+main.o
+config.o
+output.csv
